@@ -1,5 +1,10 @@
 1. clock for each PE & router
 
+- NoximMain.cpp->clock => NoximNoC.h->clock
+- NoximNoC.h->clock => t[i][j]->clock(clock)
+- NoximTile.h->NoximRouter *r->clock
+- NoximTile.h->NoximProcessingElement *pe->clock
+
 2. buffer between nodes
 
 3. further implementation (to be splited)
