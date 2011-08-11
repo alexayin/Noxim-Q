@@ -5,6 +5,10 @@
 - NoximTile.h->NoximRouter *r->clock
 - NoximTile.h->NoximProcessingElement *pe->clock
 
+Originally, the clock is assigned through NoximNoC to the whole NoC, i.e., all t[i][j].
+
+The purpose is to assign different clock signals to different t[i][j]. The router and PE in each tile should work under the same clock frequency. 
+
 2. buffer between nodes
 
 3. further implementation (to be splited)

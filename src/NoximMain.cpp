@@ -55,12 +55,13 @@ int sc_main(int arg_num, char *arg_vet[])
     parseCmdLine(arg_num, arg_vet);
 
     // Signals
-    sc_clock clock("clock", 1, SC_NS);
+    sc_clock clock1("clock1", 1, SC_NS);
+    sc_clock clock2("clock2", 2, SC_NS);
     sc_signal <bool> reset;
 
     // NoC instance
     NoximNoC *n = new NoximNoC("NoC");
-    n->clock(clock);
+    n->clock(clock2);  // Change here for different clock for global clock
     n->reset(reset);
 
     // Trace signals
@@ -68,7 +69,7 @@ int sc_main(int arg_num, char *arg_vet[])
     if (NoximGlobalParams::trace_mode) {
 	tf = sc_create_vcd_trace_file(NoximGlobalParams::trace_filename);
 	sc_trace(tf, reset, "reset");
-	sc_trace(tf, clock, "clock");
+	sc_trace(tf, clock2, "clock2");  // Change here for different clocks for global clock
 
 	for (int i = 0; i < NoximGlobalParams::mesh_dim_x; i++) {
 	    for (int j = 0; j < NoximGlobalParams::mesh_dim_y; j++) {
