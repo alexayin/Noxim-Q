@@ -1,4 +1,4 @@
-Noxim - the NoC Simulator
+Noxim on MacBook Pro - the NoC Simulator
 =========================
 
 Welcome to Noxim, the Network-on-Chip Simulator developed at the University of Catania (Italy).
